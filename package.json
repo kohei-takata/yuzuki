@@ -1,0 +1,12 @@
+{
+  "name": "yuzuki",
+  "version": "0.0.1",
+  "description": "Inline and realtime markdown wysiwyg editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kohei TAKATA",
+  "license": "MIT",
+  "keywords": ["markdown", "editor", "wysiwyg", "inline"]
+}
