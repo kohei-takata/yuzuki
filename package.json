@@ -8,5 +8,10 @@
   },
   "author": "Kohei TAKATA",
   "license": "MIT",
-  "keywords": ["markdown", "editor", "wysiwyg", "inline"]
+  "keywords": [
+    "markdown",
+    "editor",
+    "wysiwyg",
+    "inline"
+  ]
 }

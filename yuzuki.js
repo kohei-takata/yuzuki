@@ -21,37 +21,53 @@ function init() {
     const observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             let parentNode = mutation.target.parentNode;
-            let innerHTML = parentNode.innerHTML;
-            parentNode.innerHTML = '<br />';
+
             if (!parentNode) {
-            } else if (innerHTML === '#&nbsp;') {
+                return;
+            }
+
+            if (parentNode.innerHTML === '#&nbsp;') {
+                parentNode.innerHTML = '<br />';
                 h1();
-            } else if (innerHTML === '##&nbsp;') {
+            } else if (parentNode.innerHTML === '##&nbsp;') {
+                parentNode.innerHTML = '<br />';
                 h2();
-            } else if (innerHTML === '###&nbsp;') {
+            } else if (parentNode.innerHTML === '###&nbsp;') {
+                parentNode.innerHTML = '<br />';
                 h3();
-            } else if (innerHTML === '####&nbsp;') {
+            } else if (parentNode.innerHTML === '####&nbsp;') {
+                parentNode.innerHTML = '<br />';
                 h4();
-            } else if (innerHTML === '&gt;&nbsp;') {
+            } else if (parentNode.innerHTML === '&gt;&nbsp;') {
+                parentNode.innerHTML = '<br />';
                 inyou();
-            } else if (innerHTML === '-&nbsp;') {
+            } else if (parentNode.innerHTML === '-&nbsp;') {
+                parentNode.innerHTML = '<br />';
                 list();
-            } else if (innerHTML === '1.&nbsp;') {
+            } else if (parentNode.innerHTML === '1.&nbsp;') {
+                parentNode.innerHTML = '<br />';
                 listwithnumber();
-            } else if (innerHTML === '-[') {
+            } else if (parentNode.innerHTML === '-[') {
+                parentNode.innerHTML = '<br />';
                 todo();
-            } else if (innerHTML === '```') {
+            } else if (parentNode.innerHTML === '```') {
+                parentNode.innerHTML = '<br />';
                 document.execCommand('formatBlock', false, 'div');
                 code();
-            } else if (innerHTML === '`&nbsp;') {
+            } else if (parentNode.innerHTML === '`&nbsp;') {
+                parentNode.innerHTML = '<br />';
                 codeOneLine();
-            } else if (innerHTML === '*&nbsp;' || innerHTML === '_&nbsp;') {
+            } else if (parentNode.innerHTML === '*&nbsp;' || parentNode.innerHTML === '_&nbsp;') {
+                parentNode.innerHTML = '<br />';
                 em();
-            } else if (innerHTML === '**&nbsp;' || innerHTML === '__&nbsp;') {
+            } else if (parentNode.innerHTML === '**&nbsp;' || parentNode.innerHTML === '__&nbsp;') {
+                parentNode.innerHTML = '<br />';
                 strong();
-            } else if (innerHTML === '~~&nbsp;') {
+            } else if (parentNode.innerHTML === '~~&nbsp;') {
+                parentNode.innerHTML = '<br />';
                 del();
-            } else if (innerHTML === '---') {
+            } else if (parentNode.innerHTML === '---') {
+                parentNode.innerHTML = '<br />';
                 hr();
             }
         });
@@ -65,22 +81,23 @@ function init() {
 }
 
 function h1() {
-    document.execCommand('formatBlock', false, 'h1');
+    document.execCommand('insertHTML', false, `<h1><br></h1>`);
 }
 
 function h2() {
-    document.execCommand('formatBlock', false, 'h2');
+    document.execCommand('insertHTML', false, `<h2><br></h2>`);
 }
 function h3() {
-    document.execCommand('formatBlock', false, 'h3');
+    document.execCommand('insertHTML', false, `<h3><br></h3>`);
 }
 
 function h4() {
-    document.execCommand('formatBlock', false, 'h4');
+    document.execCommand('insertHTML', false, `<h4><br></h4>`);
+    document.execCommand('', false, 'h4');
 }
 
 function inyou() {
-    document.execCommand('formatBlock', false, 'blockquote');
+    document.execCommand('insertHTML', false, `<blockquote><br></blockquote>`);
 }
 
 function list() {
