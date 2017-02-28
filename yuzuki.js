@@ -72,12 +72,12 @@ function init() {
             }
         });
     });
-    const editor = document.getElementById('editor');
-    const options = {
-        characterData: true,
-        subtree: true
-    };
-    observer.observe(editor, options);
+    // const editor = document.getElementById('editor');
+    // const options = {
+    //     characterData: true,
+    //     subtree: true
+    // };
+    // observer.observe(editor, options);
 }
 
 function h1() {
@@ -141,4 +141,10 @@ function hr() {
     let div = document.createElement('div');
     div.appendChild(document.createElement('br'));
     document.getElementById('editor').appendChild(div);
+}
+
+function addImage() {
+    let img = document.createElement("img");
+    img.setAttribute("src", "https://rr.img.naver.jp/mig?src=http%3A%2F%2Fimgcc.naver.jp%2Fkaze%2Fmission%2FUSER%2F20161117%2F22%2F2588322%2F12%2F500x444x72dac6e66606845b0a493c55.jpg%2F300%2F600&twidth=300&theight=0&qlt=80&res_format=jpg&op=r");
+    document.getElementById("items").appendChild(img);
 }

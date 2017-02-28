@@ -13,5 +13,8 @@
     "editor",
     "wysiwyg",
     "inline"
-  ]
+  ],
+  "dependencies": {
+    "sortablejs": "^1.5.1"
+  }
 }
