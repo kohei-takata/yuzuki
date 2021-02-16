@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <title>Sample</title>
     <script src="yuzuki.js"></script>
+    <script src="./node_modules/sortablejs/Sortable.js"></script>
 </head>
 <body>
-    <div id="editor" contenteditable="true">
-        <div><br></div>
+    <div id="items">
+        <div class="editor">
+            <div><br></div>
+        </div>
     </div>
+    <button id="image" onclick="addImage()">Add image</button>
+    <button id="link" onClick="addLink()">Add link</button>
     <script>
         init();
+        Sortable.create(items, { filter: '.editor', ignore: '[contenteditable="true"]' });
+        document.getElementsByClassName("editor")[0].addEventListener( "click", function( e ) {
+            document.getElementsByClassName("editor")[0].setAttribute("contenteditable", true);
+        });
+        document.getElementsByClassName("editor")[0].addEventListener( "dblclick", function( e ) {
+            document.getElementsByClassName("editor")[0].setAttribute("contenteditable", false);
+        });
     </script>
 </body>
 </html>
